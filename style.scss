@@ -1,0 +1,540 @@
+/* Mixin */
+@mixin selection {
+    & ::selection {
+        color: $selection-color;
+        background: $selection-background;
+    }
+
+    & ::-moz-selection {
+        color: $selection-color;
+        background: $selection-background;
+    }
+}
+
+@mixin animation-delay ($delay) {
+    -webkit-animation-delay: $delay;
+    animation-delay: $delay;
+    -o-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+}
+
+@mixin animation-duration ($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+}
+
+@mixin animation-animation ($animation) {
+    -webkit-animation-name: $animation;
+    -moz-animation-name: $animation;
+    -o-animation-name: $animation;
+    animation-name: $animation;
+}
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin align-self($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+}
+
+@mixin box-shadow($box-model) {
+    -moz-box-shadow: $box-model;
+    -webkit-box-shadow: $box-model;
+    -o-box-shadow: $box-model;
+    box-shadow: $box-model;
+}
+
+@mixin text-shadow($text-shadow) {
+    -moz-text-shadow: $text-shadow;
+    -webkit-text-shadow: $text-shadow;
+    -o-text-shadow: $text-shadow;
+    text-shadow: $text-shadow;
+}
+
+
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+@mixin flex-flow($flow) {
+    -webkit-flex-flow: $flow;
+    -moz-flex-flow: $flow;
+    -ms-flex-flow: $flow;
+    flex-flow: $flow;
+}
+
+@mixin perspective($val) {
+    -webkit-perspective: $val;
+    -moz-perspective: $val;
+    -ms-perspective: $val;
+    perspective: $val;
+}
+
+@mixin transform-style($val) {
+    -webkit-transform-style: $val;
+    -moz-transform-style: $val;
+    -ms-transform-style: $val;
+    transform-style: $val;
+}
+
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+
+@mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+}
+
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+}
+
+@mixin align-self($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+}
+
+@mixin transform($transformation) {
+    transform: $transformation;
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -ms-transform: $transformation;
+    -o-transform: $transformation;  
+  }
+  
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    -o-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+}
+
+@mixin rotate() {
+    -webkit-transform: rotate();
+    -moz-transform: rotate();
+    -ms-transform: rotate();
+    transform: rotate();
+}
+
+@mixin rotatex($x) {
+    -webkit-transform: rotateX($x);
+    -moz-transform: rotateX($x);
+    -ms-transform: rotateX($x);
+    transform: rotateX($x);
+}
+
+@mixin rotatey($y) {
+    -webkit-transform: rotateY($y);
+    -moz-transform: rotateY($y);
+    -ms-transform: rotateY($y);
+    transform: rotateY($y);
+}
+
+@mixin scale($x) {
+    -webkit-transform: scale($x);
+    -moz-transform: scale($x);
+    -ms-transform: scale($x);
+    transform: scale($x);
+}
+
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin x-user-select($value) {
+    -webkit-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    user-select: $value;
+}
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin backface-visibility($value) {
+    -webkit-backface-visibility: $value;
+    -moz-backface-visibility: $value;
+    backface-visibility: $value;
+}
+
+@mixin bg-animation($animationName) {
+    -webkit-animation: #{$animationName};
+    -moz-animation: #{$animationName};
+    animation: #{$animationName};
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+/* varibale */
+$primary-font: railway;
+$secondary-font: railway;
+
+$base-size: 16px;
+$h1-font: 80px;
+$h2-font: 70px;
+$h3-font: 60px;
+$h4-font: 50px;
+$h5-font: 40px;
+$h6-font: 30px;
+
+$font-weight-1: 100;
+$font-weight-2: 200;
+$font-weight-3: 300;
+$font-weight-4: 400;
+$font-weight-5: 500;
+$font-weight-6: 600;
+$font-weight-7: 700;
+$font-weight-8: 800;
+$font-weight-9: 900;
+
+$letter-spacing-body: 0;
+$letter-spacing-title: 0;
+
+$line-height-body: 0;
+$line-height-title: 0;
+
+$color-primary: #000;
+$color-secondary: #000;
+
+$color-btn-primary: #000;
+$color-btn-primary-hover: #000;
+$color-btn-secondary: #000;
+$color-btn-secondary-hover: #000;
+
+$background-btn-primary: #000;
+$background-btn-primary-hover: #000;
+$background-btn-secondary: #000;
+$background-btn-secondary-hover: #000;
+
+$color-title-primary: #000;
+$color-title-secondary: #000;
+
+$line-height-body:1.4;
+$line-height-title:1.2;
+
+$breakpoint-custom: 1400px;
+$breakpoint-1199: 1199px;
+$breakpoint-991: 991px;
+$breakpoint-767: 767px;
+$breakpoint-480: 480px;
+
+$container-lg: 1170px;
+$container-md: 960px;
+$container-sm: 720px;
+$container-xs: 100%;
+
+
+$selection-color: 000;
+$selection-background: 000;
+
+*{
+    outline: none;
+    @include box-sizing(border-box);
+    padding:0; margin:0;
+    &:before{
+        @include box-sizing(border-box);
+        padding:0; margin:0;
+    }
+    &:after{
+        @include box-sizing(border-box);
+        padding:0; margin:0;
+    }
+}
+
+::-moz-selection {
+
+    text-shadow: none;
+}
+
+::selection {
+   
+    text-shadow: none;
+}
+
+a {
+    color: $color-btn-primary;
+    display: inline-block;
+    text-decoration: none;
+    @include transition(.3s all);
+    &:hover {
+        color: $color-btn-primary-hover;
+    }
+}
+p { padding:0 0 0px; }
+p + p{ padding-top:0px;}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $primary-font;
+    font-size: $base-size;
+    color: $color-primary;
+    line-height: $line-height-body;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+h1{
+    font-size:$h1-font;
+}
+h2{
+    font-size:$h2-font;
+}
+h3{
+    font-size:$h3-font;
+}
+h4{
+    font-size:$h4-font;
+}
+h5{
+    font-size:$h5-font;
+}
+h6{
+    font-size:$h6-font;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ margin: 0px;
+ color: $color-title-primary;
+ line-height: $line-height-title;
+ font-weight: $font-weight-4;
+}
+.left-padding {
+    padding-left: calc(((100% - 1140px) - 30px) / 2);
+}
+.right-padding {
+    padding-right: calc(((100% - 1140px) - 30px) / 2);
+}
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: auto;
+    max-width: $breakpoint-custom;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    display:block; 
+    float:none; 
+    width:auto;
+}
+
+
+/* CSS Start */
+
+/* CSS End */
+
+
+/* Responsive CSS Start */
+@media (max-width:$breakpoint-custom) {
+    .container{max-width: $container-lg;}
+}
+
+@media (max-width:$breakpoint-1199) {
+    .container{max-width : $container-lg;}
+}
+
+@media (max-width:$breakpoint-991) {
+    .container{max-width: $container-md;}
+}
+
+@media (max-width:$breakpoint-767) {
+    .container{max-width: $container-sm;}
+
+
+    .mobile-trigger {
+        display: block;
+        height: 20px;
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: -45px;
+        i {
+            position: absolute;
+            height: 3px;
+            display: block;
+            width: 30px;
+            background: #151515;
+            left: 0px;
+            top: 50%;
+            @include transform(translatey(-50%));
+            @include transition(all 0.2s linear);
+            &:after, &:before{
+                content: "";
+                height: 100%;
+                width: 100%;
+                background: #151515;
+                left: 0;
+                position: absolute;
+            }
+            &:after {
+                top: 8px;
+                @include transform(rotateZ(0deg));
+                -webkit-transition: top  0.2s linear 0.2s, -webkit-transform 0.2s linear;
+                transition: top  0.2s linear 0.2s, -webkit-transform 0.2s linear;
+                -o-transition: transform 0.2s linear, top  0.2s linear 0.2s;
+                transition: transform 0.2s linear, top  0.2s linear 0.2s;
+                transition: transform 0.2s linear, top  0.2s linear 0.2s, -webkit-transform 0.2s linear; 
+            }
+            &:before {
+                top: -8px;
+                @include transform(rotateZ(0deg));
+                -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+                transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+                -o-transition: transform 0.2s linear, top 0.2s linear 0.2s;
+                transition: transform 0.2s linear, top 0.2s linear 0.2s;
+                transition: transform 0.2s linear, top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+            }
+        }
+        
+
+    }  
+    .mobile-open{
+        .mobile-trigger {
+            i {
+                background: transparent;
+                @include transition(all 0.2s linear);
+                &:after {
+                    @include transform(rotateZ(45deg));
+                    top: 0;
+                    -webkit-transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+                    -o-transition: all 0.2s linear, transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, transform 0.2s linear 0.2s, -webkit-transform 0.2s linear 0.2s;
+                }
+                :before {
+                    top: 0;
+                    @include transform(rotateZ(-45deg));
+                    -webkit-transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+                    -o-transition: all 0.2s linear, transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, transform 0.2s linear 0.2s;
+                    transition: all 0.2s linear, transform 0.2s linear 0.2s, -webkit-transform 0.2s linear 0.2s;
+                }
+            }
+        }
+    }
+
+    .child-trigger {
+        display: block;
+        height: 43px;
+        width: 43px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        z-index: 1;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        i {
+            display: block;
+            position: relative;
+            height: 1px;
+            width: 9px;
+            background: #fff;
+            top: 0;
+            left: 0;
+            &:after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                display: block;
+                background: #fff;
+                left: 0;
+                @include transform(rotatey(90deg));
+                @include transition(all 0.2s linear);
+            }
+            
+        }
+        &.child-open {
+            i{
+                &:after {
+                    @include transform(rotatey(180deg));
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:$breakpoint-480) {
+    .container{max-width: $container-xs;}
+}
+/* Responsive CSS End */
+
