@@ -1,0 +1,928 @@
+$Primary-Font: "Roboto", sans-serif;
+$Secondary-Font: "Poppins", sans-serif;
+
+$hover-color: #f94515;
+$link-color: #404144;
+$white: #fff;
+$black: #000;
+
+$breakpoint-xxl: 1800px;
+$breakpoint-xl: 1400px;
+$breakpoint-lg: 1199px;
+$breakpoint-md: 991px;
+$breakpoint-sm: 767px;
+$breakpoint-xs: 575px;
+
+$container-xxl: 1320px;
+$container-xl: 1140px;
+$container-lg: 960px;
+$container-md: 720px;
+$container-sm: 540px;
+$container-xs: 100%;
+
+// Mixins
+
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+  -o-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+}
+
+/* example */
+
+// @include animation-delay(0s);
+
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+/* example */
+
+// @include animation-duration(2s);
+
+@mixin animation-animation($animation) {
+  -webkit-animation-name: $animation;
+  -moz-animation-name: $animation;
+  -o-animation-name: $animation;
+  animation-name: $animation;
+}
+
+// Flexbox display
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+@mixin box-shadow($box-model) {
+  -moz-box-shadow: $box-model;
+  -webkit-box-shadow: $box-model;
+  -o-box-shadow: $box-model;
+  box-shadow: $box-model;
+}
+
+/* 01-04-2020 */
+@mixin text-shadow($text-shadow) {
+  -moz-text-shadow: $text-shadow;
+  -webkit-text-shadow: $text-shadow;
+  -o-text-shadow: $text-shadow;
+  text-shadow: $text-shadow;
+}
+
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+  -moz-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+@mixin perspective($val) {
+  -webkit-perspective: $val;
+  -moz-perspective: $val;
+  -ms-perspective: $val;
+  perspective: $val;
+}
+
+@mixin transform-style($val) {
+  -webkit-transform-style: $val;
+  -moz-transform-style: $val;
+  -ms-transform-style: $val;
+  transform-style: $val;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+}
+
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+// Browser Prefixes
+@mixin transform($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin translatex($x) {
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+  -ms-transform: translateX($x);
+  -o-transform: translateX($x);
+  transform: translateX($x);
+}
+
+@mixin translatey($y) {
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+  transform: translateY($y);
+}
+
+@mixin translatez($z) {
+  -webkit-transform: translateZ($z);
+  -moz-transform: translateZ($z);
+  -ms-transform: translateZ($z);
+  -o-transform: translateZ($z);
+  transform: translateZ($z);
+}
+
+// Transform Origin
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+@mixin rotate() {
+  -webkit-transform: rotate();
+  -moz-transform: rotate();
+  -ms-transform: rotate();
+  transform: rotate();
+}
+
+@mixin rotatex($x) {
+  -webkit-transform: rotateX($x);
+  -moz-transform: rotateX($x);
+  -ms-transform: rotateX($x);
+  transform: rotateX($x);
+}
+
+@mixin rotatey($y) {
+  -webkit-transform: rotateY($y);
+  -moz-transform: rotateY($y);
+  -ms-transform: rotateY($y);
+  transform: rotateY($y);
+}
+
+@mixin scale($x) {
+  -webkit-transform: scale($x);
+  -moz-transform: scale($x);
+  -ms-transform: scale($x);
+  transform: scale($x);
+}
+
+// Transition
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+// X-user-select
+@mixin x-user-select($value) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+// Box Sizing
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+  -moz-box-sizing: $box-model;
+  box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin backface-visibility($value) {
+  -webkit-backface-visibility: $value;
+  -moz-backface-visibility: $value;
+  backface-visibility: $value;
+}
+
+@mixin bg-animation($animationName) {
+  -webkit-animation: #{$animationName};
+  -moz-animation: #{$animationName};
+  animation: #{$animationName};
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+* {
+  @include box-sizing(border-box);
+  padding: 0;
+  margin: 0;
+  outline: none;
+  &:after {
+    @include box-sizing(border-box);
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+  &:before {
+    @include box-sizing(border-box);
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+}
+
+::-moz-selection {
+  color: $white;
+  background: $black;
+  text-shadow: none;
+}
+::selection {
+  color: $white;
+  background: $black;
+  text-shadow: none;
+}
+
+a {
+  color: $link-color;
+  @include transition(all 0.3s);
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: $Secondary-Font;
+  color: $white;
+  font-size: 16px;
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+  height: auto;
+  max-width: 100%;
+}
+p {
+  padding: 0 0 0px;
+}
+p + p {
+  padding-top: 0px;
+}
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+  font-family: $Secondary-Font;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 90px;
+  font-weight: 800;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+h2 {
+  font-size: 50px;
+  line-height: 75px;
+  font-weight: 700;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+h3 {
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 800;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+h4 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+h5 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+h6 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $black;
+  @media (max-width: $breakpoint-xxl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xl) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: $breakpoint-xs) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.row {
+  margin: 0 -15px;
+  display: block;
+  width: auto;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: $container-xxl;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  @media (max-width: $breakpoint-xxl) {
+    max-width: $container-xxl;
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    max-width: $container-xl;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    max-width: $container-lg;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    max-width: $container-md;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: $container-sm;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    max-width: $container-xs;
+  }
+}
+
+.left-padding {
+  padding-left: calc(((100% - 1140px) - 30px) / 2);
+}
+.right-padding {
+  padding-right: calc(((100% - 1140px) - 30px) / 2);
+}
+
+.button {
+  width: 100%;
+
+  a {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    color: $white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: $black;
+    padding: 13px 21px;
+    border-radius: 25px;
+    &:hover {
+      background-color: $black;
+      color: #fff;
+    }
+  }
+}
+
+.bcontain {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bcover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.header-section.sticky {
+  position: fixed;
+  background-color: #ffffff;
+  @include bg-animation(animationtwo 0.5s linear);
+}
+
+.header-section {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: transparent;
+  @include transition(all 0.5s);
+
+  .header-in {
+    width: 100%;
+    @include flexbox();
+    @include flex-wrap(wrap);
+
+    .logo {
+      width: 119px;
+      padding: 14px 0px;
+
+      a {
+        display: inline-block;
+
+        span {
+          font-size: 26px;
+          line-height: 46.8px;
+          letter-spacing: normal;
+          word-spacing: 0px;
+          color: #000000;
+          font-weight: 900;
+          display: inline-block;
+
+          &:nth-child(1) {
+            color: #ffffff;
+            position: relative;
+
+            &:after {
+              position: absolute;
+              top: 50%;
+              left: -12px;
+              width: 40px;
+              height: 40px;
+              content: "";
+              background: #3e64ff;
+              z-index: -1;
+              @include border-radius(50%);
+              @include transform(0%, -50%);
+            }
+          }
+        }
+      }
+    }
+
+    .menu {
+      width: calc(100% - 119px);
+
+      ul {
+        width: 100%;
+        @include flexbox();
+        @include flex-wrap(wrap);
+
+        li {
+          margin: 0px 19px;
+
+          a {
+            font-size: 16px;
+            color: #000000;
+            font-weight: 400;
+            line-height: 28.8px;
+            letter-spacing: normal;
+            padding: 23px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .mobile-trigger {
+    display: block;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    i {
+      position: absolute;
+      height: 3px;
+      display: block;
+      width: 30px;
+      background: #151515;
+      left: 0px;
+      top: 50%;
+      -webkit-transform: translatey(-50%);
+      -ms-transform: translatey(-50%);
+      transform: translatey(-50%);
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      &:after,
+      &:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #151515;
+        left: 0;
+        position: absolute;
+      }
+      &:after {
+        top: 8px;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+        transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear, top 0.2s linear 0.2s;
+        transition: transform 0.2s linear, top 0.2s linear 0.2s;
+        transition: transform 0.2s linear, top 0.2s linear 0.2s,
+          -webkit-transform 0.2s linear;
+      }
+      &:before {
+        top: -8px;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+        transition: top 0.2s linear 0.2s, -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear, top 0.2s linear 0.2s;
+        transition: transform 0.2s linear, top 0.2s linear 0.2s;
+        transition: transform 0.2s linear, top 0.2s linear 0.2s,
+          -webkit-transform 0.2s linear;
+      }
+    }
+  }
+
+  .mobile-open {
+    .mobile-trigger {
+      i {
+        background: transparent;
+        -webkit-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        &:after {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 0;
+          -webkit-transition: all 0.2s linear,
+            -webkit-transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+          -o-transition: all 0.2s linear, transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, transform 0.2s linear 0.2s,
+            -webkit-transform 0.2s linear 0.2s;
+        }
+        &:before {
+          top: 0;
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          -webkit-transition: all 0.2s linear,
+            -webkit-transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, -webkit-transform 0.2s linear 0.2s;
+          -o-transition: all 0.2s linear, transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, transform 0.2s linear 0.2s;
+          transition: all 0.2s linear, transform 0.2s linear 0.2s,
+            -webkit-transform 0.2s linear 0.2s;
+        }
+      }
+    }
+  }
+
+  .child-trigger {
+    display: block;
+    height: 43px;
+    width: 43px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 9px;
+      background: #fff;
+      top: 0;
+      left: 0;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background: #fff;
+        left: 0;
+        transform: rotate(90deg);
+        transition: all 0.2s linear;
+      }
+    }
+    &.child-open {
+      i {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .header-section {
+    background-color: $white;
+    .header-in {
+      .menu {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background: #ffffff;
+        @include transition(all 0.3s);
+        ul {
+          width: 100%;
+          float: left;
+          max-height: calc(100% - 74px);
+          overflow: auto;
+          li {
+            text-align: left;
+            width: 100%;
+            float: left;
+            margin: 0;
+            border-bottom: 1px solid #efefef;
+            &:last-child {
+              border: none;
+            }
+            a {
+              display: block;
+              padding: 8px 15px;
+              font-size: 15px;
+              padding: 6px 15px;
+              &:after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .open .header-section .header-in .menu {
+    left: 0%;
+  }
+}
+
+// @media (max-width:$breakpoint-xxl) {}
+
+// @media (max-width:$breakpoint-xl) {}
+
+// @media (max-width:$breakpoint-lg) {}
+
+// @media (max-width:$breakpoint-md) {}
+
+// @media (max-width:$breakpoint-xs) {}
